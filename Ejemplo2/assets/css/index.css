@@ -1,0 +1,18 @@
+
+.encabezados{
+    background-color: rgba(0, 0, 0, 0.943);
+    text-align: justify;
+    font-size: medium;
+    color: white;
+}
+.prueba{
+    background: url("../img/fondo.jpg");
+    height: 200px;
+    width: 100%;
+    
+}
+.prueba p{
+    padding-left: 5%;
+    padding-top: 5%;
+    color:white;
+}
