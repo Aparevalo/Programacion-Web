@@ -1,0 +1,207 @@
+/*General*/
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+/*Menu*/
+#menu {
+    width: 25%;
+    float: left;
+    position: fixed;
+    background: #040b14;  
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0 15px;
+    overflow-y: auto;
+  }
+
+#menu ul {
+    list-style-type: none;
+    color:white;
+    margin: 0;
+    padding: 30px 0 0 0;
+    width: 200px;
+    background-color: #040b14;
+  }
+  
+#menu li a {
+  
+    display: block;
+    color:white;
+    padding: 12px 15px;
+    text-decoration: none;
+    margin-top: 4%;
+  }
+  
+
+#menu li a:hover {
+    background-color: #555;
+    color: white;
+  }  
+
+
+/*Profile*/
+#menu .profile img {
+    border-radius: 50%;
+    margin: 15px auto;
+    display: block;
+    width: 120px;
+    border: 8px solid #2c2f3f;
+}
+
+#menu .profile .social-links a {
+  font-size: 20px;
+  display: inline-block;
+  background: #212431;
+  color: #fff;
+  padding: 6px 6px 6px;
+  margin-top: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+  border-radius: 50%;
+  text-align: center;
+  width: 26px;
+  height: 20px;
+  line-height: 1;
+  
+}
+
+#menu .profile .social-links a:hover {
+  background: #149ddd;
+  color: #fff;
+  text-decoration: none;
+}
+
+#menu .profile h1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  text-align-last: center;
+  font-family: "Poppins", sans-serif;
+}
+
+#menu .profile h1 a,
+#menu .profile h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+#main {
+  position: relative;
+  width: 75%;
+  margin-left: 25%;    
+}
+
+section {
+  position: relative;
+  
+  width: 97%; 
+  margin-left: 2.8%;
+  margin-top: -10px;
+  margin-bottom: 10%;
+  
+}
+
+section h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #173b6c;
+}
+
+
+section h2 {
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  color: #1a427a;
+}
+
+section .title{
+  margin-left: 6%;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+
+}
+
+section .container{
+  margin-left: 8%;
+
+}
+
+#home .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;  
+  grid-gap: 5px;
+  padding: 5px;
+}
+
+#home .grid-container > div {
+  text-align: center;
+}
+#home .grid-container > div:nth-child(3) {
+  display: grid;
+  grid-template-columns: auto auto auto; 
+  grid-gap: 5px;
+  padding: 5px; 
+}
+
+#home .item1 {
+  
+  grid-row: 1 / span 3;
+  grid-column: 1 / span 2;
+  
+  
+}
+
+
+
+.grid-container .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-container .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.grid-container .content ul strong {
+  margin-right: 10px;
+}
+
+.grid-container .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: #149ddd;
+  line-height: 0;
+}
+
+.skills{
+  background: #f5f8fd;
+  margin-left: -2.8%;
+}
+
+.skills h2{
+  margin-left: 8%;
+}
+
+.skills p{
+  margin-left: 8%;
+}
+.skills .content-bar{
+  
+  margin-left: 8%;
+  columns: auto 2;
+}
+#study .container{
+  
+  columns: auto 2;
+}
