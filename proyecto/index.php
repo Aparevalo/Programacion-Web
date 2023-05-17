@@ -1,3 +1,9 @@
+<?php
+  ob_start();
+  require_once('includes/load.php');
+  if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
+?>
+
 <html>
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -31,7 +37,7 @@
                                     <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                     <input type="password" name="password" id="password" placeholder="Contraseña"/>
                                 </div>
-                                
+                                <?php echo display_msg($msg); ?>
                                 <div class="form-group form-button">
                                     <input type="submit" name="signup" id="signup" class="form-submit" value="Iniciar Sesión"/>
                                 </div>
@@ -42,7 +48,7 @@
                 </div>
             </section>
             </div>
-
+    <?php include_once('layouts/footer.php'); ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
