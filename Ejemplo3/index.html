@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <title>AJAX</title>
+    <link rel="stylesheet" type="text/css" media="screen" href=""> 
+</head>
+<body>
+
+
+<h2>Cargar texto de documento</h2>
+<button type="button" onclick="cargarArchivo()">Cargar info del documento</button>
+<div id="info"></div>
+<script>
+function cargarArchivo() {
+    const prueba = new XMLHttpRequest();
+    prueba.onload = function() {
+      document.getElementById("info").innerHTML =
+      this.responseText;
+    }
+    prueba.open("GET", "ajax_info.txt");
+    prueba.send();
+  }
+  </script>
+
+</body>
+</html>

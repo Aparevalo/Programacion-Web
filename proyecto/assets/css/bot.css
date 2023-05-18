@@ -44,12 +44,15 @@
       color: .711 
   }
    
-  input { 
-      border: 0; 
-      padding: 15px; 
-      margin-left: auto;
-      border-radius: 10px; 
-  }
+.inputcont{
+    border: 2; 
+    padding: 15px; 
+    margin-left: auto;
+    border-radius: 10px; 
+}
+
+
+
   
   .messages {
       display: flex;

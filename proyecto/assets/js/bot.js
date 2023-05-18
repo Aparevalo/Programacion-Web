@@ -1,165 +1,22 @@
-const inputField = document.getElementById("input");
-inputField.addEventListener("keydown", (e) => {
-  if (e.code === "Enter") {
-    let input = inputField.value;
-    inputField.value = "";
-    output(input);
-  }
-});
-
-function output(input) {
-  let product;
-  let text = input.toLowerCase().replace(/[^\w\s\d]/gi, "");
-  text = text
-    .replace(/ a /g, " ")
-    .replace(/whats/g, "what is")
-    .replace(/please /g, "")
-    .replace(/ please/g, "")
-    .replace(/r u/g, "are you");
-
-  if (compare(utterances, answers, text)) {
-    // Search for exact match in triggers
-    product = compare(utterances, answers, text);
-  } 
-  else {
-    product = alternatives[Math.floor(Math.random() * alternatives.length)];
-  }
-
-  addChatEntry(input, product);
-}
-
-function arrayUintersect(arr1, arr2) {
-    const commonPositions = [];
-    
-    arr1.forEach((element, index) => {
-      if (arr2.includes(element)) {
-        commonPositions.push(index);
-      }
+$(document).ready(function(){
+    $("#send-btn").on("click", function(){
+        $value = $("#data").val();
+        $msg = '<div id="user" class="user response"><span>'+ $value +'</span></div>';
+        $(".messages").append($msg);
+        $("#data").val('');
+        
+        // start ajax code
+        $.ajax({
+            url: 'message.php',
+            type: 'POST',
+            data: 'text='+$value,
+            success: function(result){
+               
+                $replay = '<div id="bot" class="bot response"><span>'+ result +'</span></div>'
+                $(".messages").append($replay);
+                // when chat goes down the scroll bar automatically comes to the bottom
+                $(".messages").scrollTop($(".messages")[0].scrollHeight);
+            }
+        });
     });
-    
-    
-  return positions.length > 0 ? commonPositions : false;
-  }
-  
-
-  
-  
-function arrayIntersectValue(array1, array2) {
-    return array1.filter(value => array2.includes(value));
-  }
-
-  function compare(utterancesArray, answersArray, string) {
-    let reply;
-    let replyFound = false;
-    for (let x = 0; x < utterancesArray.length; x++) {
-      for (let y = 0; y < utterancesArray[x].length; y++) {
-        if (obtenerInterseccion(utterancesArray[x][y].split(' '), string.split(' '))) {
-          let replies = answersArray[x];
-          reply = replies[Math.floor(Math.random() * replies.length)];
-          replyFound = true;
-          break;
-        }
-      }
-      if (replyFound) {
-        break;
-      }
-    }
-    return reply;
-  }
-
-function addChatEntry(input, product) {
-  const messagesContainer = document.getElementById("messages");
-  let userDiv = document.createElement("div");
-  userDiv.id = "user";
-  userDiv.className = "user response";
-  userDiv.innerHTML = `<span>${input}</span>`;
-  messagesContainer.appendChild(userDiv);
-
-  let botDiv = document.createElement("div");
-  let botText = document.createElement("span");
-  botDiv.id = "bot";
-  botDiv.className = "bot response";
-  botText.innerText = "Typing...";
-  botDiv.appendChild(botText);
-  messagesContainer.appendChild(botDiv);
-
-  messagesContainer.scrollTop =
-    messagesContainer.scrollHeight - messagesContainer.clientHeight;
-
-  setTimeout(() => {
-    botText.innerText = `${product}`;
-  }, 2000);
-}
-
-function obtenerInterseccion(arr1, arr2) {
-    const interseccion = arr1.filter(valor => arr2.includes(valor));
-    return interseccion.length > 0 ? true : false;
-  }
-
-
-
-// input options
-const utterances = [
- 
-    ["reservar aula", "how is life", "how are things"],
-    ["hi", "hey", "hello", "good morning", "good afternoon"],
-    ["what are you doing", "what is going on", "what is up"],
-    ["how old are you"],
-    ["who are you", "are you human", "are you bot", "are you human or bot"],
-    ["who created you", "who made you"],
-    [
-      "your name please",
-      "your name",
-      "may i know your name",
-      "what is your name",
-      "what call yourself"
-    ],
-    ["happy", "good", "fun", "wonderful", "fantastic", "cool"],
-    ["bad", "bored", "tired"],
-    ["help me", "tell me story", "tell me joke"],
-    ["ah", "yes", "ok", "okay", "nice"],
-    ["bye", "good bye", "goodbye", "see you later"],
-    ["what should i eat today"],
-    ["what", "why", "how", "where", "when"],
-    ["no", "not sure", "maybe", "no thanks"],
-    [""],
-    ["haha", "ha", "lol", "hehe", "funny", "joke"]
-  ];
-  
-  // Possible responses corresponding to triggers
-  
-  const answers = [
-     [
-      "aulas disponibles",
-    ],
-    [
-      "Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"
-    ],
-    [
-      "Nothing much",
-      "About to go to sleep",
-      "Can you guess?",
-      "I don't know actually"
-    ],
-    ["I am infinite"],
-    ["I am just a bot", "I am a bot. What are you?"],
-    ["The one true God, JavaScript"],
-    ["I am nameless", "I don't have a name"],
-    ["Have you ever felt bad?", "Glad to hear it"],
-    ["Why?", "Why? You shouldn't!"],
-    ["What about?", "Once upon a time..."],
-    ["Tell me a story", "Tell me a joke", "Tell me about yourself"],
-    ["Bye", "Goodbye", "See you later"],
-    ["Pasta", "Burger"],
-    ["Great question"],
-    ["That's ok", "What do you want to talk about?"],
-    ["Please say something :("],
-    ["Haha!", "Good one!"]
-  ];
-  
-  // Random for any other user input
-  
-  const alternatives = [
-    "Go on...",
-    "Try again",
-  ];
+});

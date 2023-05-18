@@ -1,0 +1,5 @@
+Asynchronous JavaScript, también conocido como JavaScript asíncrono, es una forma de programar en JavaScript que permite ejecutar tareas de manera no bloqueante, lo que significa que el código puede continuar ejecutándose sin esperar a que una tarea se complete.
+
+Esto se logra mediante el uso de callbacks, promesas o async/await, que son mecanismos que permiten controlar el flujo de ejecución y manejar operaciones asíncronas, como solicitudes de red, manipulación de archivos o interacciones con bases de datos.
+
+El uso de JavaScript asíncrono es fundamental en el desarrollo web moderno, ya que permite cargar y procesar datos de manera eficiente, mejorar la capacidad de respuesta de las aplicaciones y evitar bloqueos en la interfaz de usuario.
