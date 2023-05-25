@@ -69,7 +69,7 @@ $errorThreshold = 0.001; // Umbral de error para finalizar el entrenamiento
 $ann->trainOnData($trainingData, $epochs, 0, $errorThreshold);
 
 // Guarda los pesos y configuraciones de la red neuronal actualizada en un archivo de texto
-$ann->save("red_neuronal.txt");
+$ann->save("red_neuronal.txt")  ;
 
 // Carga los pesos y configuraciones desde el archivo guardado
 $ann = new Fann("red_neuronal.txt");
