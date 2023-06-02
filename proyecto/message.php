@@ -10,7 +10,7 @@ $coincidencias = array(
     
 );
 
-$acciones = array("asignar","disponibles")
+$acciones = array("asignar","disponibles");
 
 
 echo $cadena;

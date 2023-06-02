@@ -1,14 +1,14 @@
 <?php
 
-require 'vendor/autoload.php'; // Reemplaza 'vendor/autoload.php' con la ruta correcta de tu archivo de carga automática de PHP-FFANN
+
 
 use Fann\Fann;
 
-// Configuración de la red neuronal
-$numInput = 3; // Número de entradas (hora, día, número de aula)
-$numOutput = 1; // Número de salidas (profesor)
-$numLayers = 2; // Número de capas ocultas
-$numNeuronsHidden = 10; // Número de neuronas en cada capa oculta
+
+$numInput = 3; 
+$numOutput = 1; 
+$numLayers = 2; 
+$numNeuronsHidden = 10; 
 
 // Crea una instancia de la red neuronal
 $ann = new Fann($numLayers, $numInput, $numNeuronsHidden, $numOutput);
@@ -59,13 +59,13 @@ $aula = $_POST['aula'];
 // Agrega los datos de prueba al conjunto de entrenamiento
 $input = [$hora, $dia, $aula];
 $testData[] = $input;
-$trainingData[] = [$input, [0]]; //
+$trainingData[] = [$input, [0]]; 
 
-$trainingData[] = [$input, [0]]; // Asigna un valor predeterminado de 0 para el profesor
+$trainingData[] = [$input, [0]]; 
 
 // Entrena la red neuronal con los nuevos datos de entrenamiento
-$epochs = 100; // Número de épocas de entrenamiento
-$errorThreshold = 0.001; // Umbral de error para finalizar el entrenamiento
+$epochs = 100; 
+$errorThreshold = 0.001; 
 $ann->trainOnData($trainingData, $epochs, 0, $errorThreshold);
 
 // Guarda los pesos y configuraciones de la red neuronal actualizada en un archivo de texto
@@ -76,7 +76,7 @@ $ann = new Fann("red_neuronal.txt");
 
 // Realiza la predicción para los datos de prueba recién agregados
 $output = $ann->run($input);
-$profesor = round($output[0]); // Redondea la salida a la clase más cercana (profesor)
+$profesor = round($output[0]); 
 
 // Verifica la disponibilidad del aula en función de los datos de prueba recién agregados
 $disponible = true;
@@ -100,4 +100,6 @@ if ($disponible) {
 
 // Muestra las aulas disponibles en el horario y día especificados
 echo "Aulas disponibles en el horario $hora del día $dia: " . implode(", ", array_unique($aulasDisponibles)) . PHP_EOL;
+
+
 
