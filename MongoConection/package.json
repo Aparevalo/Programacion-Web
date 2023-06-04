@@ -1,0 +1,15 @@
+{
+  "name": "mongoconnection",
+  "version": "1.0.0",
+  "description": "coneccion a mongo",
+  "main": "index.js",
+  "scripts": {
+    "install": "node install.js",
+    "mongoConnection": "npm install && node install.js"
+  },
+  "author": "Anderson",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^4.16.0"
+  }
+}
