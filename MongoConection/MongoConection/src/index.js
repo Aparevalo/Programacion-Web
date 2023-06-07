@@ -1,5 +1,5 @@
 const path = require('path');
-const { config, schema, TemplateRenderer } = require('./controller');
+const { config , TemplateRenderer } = require('./controller');
 const createMongoDBConnection = require('./connection');
 const server = require('./server');
 const templatePath = path.join(__dirname, './', 'templates', 'template.html');

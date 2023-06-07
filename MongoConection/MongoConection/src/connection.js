@@ -1,4 +1,5 @@
 const { MongoClient } = require('mongodb');
+const dataSchema = require('./schema');
 
 class MongoDBConnection {
   constructor(config) {
@@ -11,7 +12,9 @@ class MongoDBConnection {
     try {
       const client = await MongoClient.connect(this.mongoURL);
       const db = client.db(this.dbName);
-      const collection = db.collection(this.collectionName);
+      const collection = db.collection(this.collectionName, {
+        schema: dataSchema
+      });
 
       const data = await collection.find().toArray();
 
