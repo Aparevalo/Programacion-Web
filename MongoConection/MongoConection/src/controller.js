@@ -1,12 +1,18 @@
 
-const config = require('./config');
-const schema = require('./schema');
+const userConfig = require('./config/userConfig');
+const productConfig = require('./config/productConfig');
+const userSchema = require('./schemas/userSchema');
+const productSchema = require('./schemas/productSchema');
 const MongoDBConnection = require('./connection');
 const TemplateRenderer = require('../../TemplateRenderer');
+const TemplateCombiner = require('../../TemplateCombiner');
 
 module.exports = {
-  config,
-  schema,
+  userConfig,
+  productConfig,
+  userSchema,
+  productSchema,
   MongoDBConnection,
-  TemplateRenderer
+  TemplateRenderer,
+  TemplateCombiner,
 };
