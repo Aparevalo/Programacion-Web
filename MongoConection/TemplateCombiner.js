@@ -16,7 +16,7 @@ class TemplateCombiner {
         const divContent = `<div>${renderedHtml}</div>`;
         combinedHtml = combinedHtml.replace(`{{${divId}}}`, divContent);
       });
-      console.log(combinedHtml);
+      
       resolve(combinedHtml);
     });
   }

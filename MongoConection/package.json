@@ -1,0 +1,20 @@
+{
+  "name": "mongoconnection",
+  "version": "1.0.0",
+  "description": "framework para coneccion mongo",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongo"
+  ],
+  "author": "Anderson",
+  "license": "MIT",
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "http-server": "^14.1.1",
+    "mongo": "^0.1.0",
+    "mongodb": "^5.6.0"
+  }
+}
