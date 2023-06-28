@@ -1,0 +1,23 @@
+{
+    "products": [
+      {
+        "Photo":"assets/img/papel.png",
+        "Name": "Papel",
+        "Description": "el papel higenico.",
+        "Price": "$10"
+      },
+      {
+        "Photo":"assets/img/papel.png",
+        "Name": "Vilcabamba",
+        "Description": "Vilcabamba es un pintoresco pueblo conocido por su clima agradable y su longevidad. Es un destino popular para aquellos que buscan relajarse y disfrutar de la naturaleza.",
+        "Price": "$20"
+      },
+      {
+        "Photo":"assets/img/papel.png",
+        "Name": "Cascada El Cisne",
+        "Description": "La Cascada El Cisne es una hermosa cascada ubicada en la provincia de Loja. Es un lugar ideal para realizar caminatas y disfrutar de la belleza natural.",
+        "Price": "$15"
+      }
+    ]
+  }
+  

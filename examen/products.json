@@ -1,20 +1,40 @@
 {
-    "products": [
-      {
-        "Name": "Parque Nacional Podocarpus",
-        "Description": "El Parque Nacional Podocarpus es una reserva natural ubicada en la provincia de Loja. Ofrece una gran diversidad de flora y fauna, así como rutas de senderismo y hermosos paisajes.",
-        "Price": "$10"
-      },
-      {
-        "Name": "Vilcabamba",
-        "Description": "Vilcabamba es un pintoresco pueblo conocido por su clima agradable y su longevidad. Es un destino popular para aquellos que buscan relajarse y disfrutar de la naturaleza.",
-        "Price": "$20"
-      },
-      {
-        "Name": "Cascada El Cisne",
-        "Description": "La Cascada El Cisne es una hermosa cascada ubicada en la provincia de Loja. Es un lugar ideal para realizar caminatas y disfrutar de la belleza natural.",
-        "Price": "$15"
-      }
-    ]
-  }
-  
+  "products": [
+    {
+      "Photo":"assets/img/cepillo.jpeg",
+      "Name": "Cepillo de diente de bambú",
+      "Description": "Nuestro cepillo de dientes de bambú ecológico es una opción consciente y respetuosa con el medio ambiente para el cuidado bucal diario. Diseñado pensando en la sostenibilidad y la salud, este cepillo de dientes ofrece una alternativa ecológica a los cepillos de plástico convencionales",
+      "Price": "$1"
+    },
+    {
+      "Photo":"assets/img/papel.jpeg",
+      "Name": "Papel higiénico reciclado",
+      "Description": "Nuestro papel higiénico reciclado es una elección responsable y sostenible para tu higiene personal y el cuidado del medio ambiente. Fabricado con materiales reciclados de alta calidad, este papel higiénico ofrece una alternativa ecológica y consciente para tu baño.",
+      "Price": "$2"
+    },
+    {
+      "Photo":"assets/img/detergente.jpeg",
+      "Name": "Detergente biodegradable:",
+      "Description": "Nuestro detergente biodegradable es la opción ideal para mantener tu ropa limpia y fresca, al mismo tiempo que cuidas del medio ambiente. Diseñado pensando en la sostenibilidad y la efectividad, este detergente ofrece una solución ecológica y responsable para tus necesidades de limpieza.",
+      "Price": "$15"
+    },
+    {
+      "Photo":"assets/img/esponja.jpeg",
+      "Name": "Esponjas de cocina naturales biodegradables",
+      "Description": "Nuestras esponjas de cocina naturales biodegradables son la elección perfecta para una limpieza efectiva y respetuosa con el medio ambiente. Fabricadas con materiales naturales y sin productos químicos agresivos, estas esponjas te permiten mantener tu cocina impecable mientras reduces tu huella ambiental.",
+      "Price": "$1"
+    },
+    {
+      "Photo":"assets/img/jabon.jpeg",
+      "Name": "Jabón líquido de manos Biodegradable",
+      "Description": "Nuestro jabón líquido de manos biodegradable es una opción consciente y sostenible para mantener tus manos limpias y cuidadas. Formulado con ingredientes naturales y respetuosos con el medio ambiente, este jabón líquido te ofrece una experiencia de lavado suave y efectiva, al tiempo que minimiza su impacto en el ecosistema. ",
+      "Price": "$2"
+    },
+    {
+      "Photo":"assets/img/desinfectante.jpeg",
+      "Name": "Desinfectante Multiuso",
+      "Description": "Nuestro Desinfectante Multiuso es la solución perfecta para mantener tu hogar limpio, saludable y libre de gérmenes. Diseñado con una fórmula avanzada, este producto es altamente efectivo para eliminar bacterias, virus y otros patógenos que pueden causar enfermedades..",
+      "Price": "$5"
+    }
+  ]
+}

@@ -11,7 +11,7 @@ const crearPersona = async (req, res) => {
       res.status(500).json({ error: 'Error al crear la persona' });
     }
   };
-
+  
   
   const obtenerPersona = async (req, res) => {
     const { id } = req.params;

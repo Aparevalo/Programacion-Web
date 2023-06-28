@@ -19,18 +19,21 @@ function showData(data){
     
     for (const product of data.products) {
         const card = createElementClassComponent('div','card');
+        const image = createElementClassComponent('img','card-img-top')
         const cardHeader = createElementClassComponent('div','card-header');
         const list = ['list-group', 'list-group-flush'];
         const myList = createElementClassList('ul', list)
         const description = createElementClassComponent('li','list-group-item');
         const cost = createElementClassComponent('li','list-group-item');
         const column = createElementClassComponent('div','col');
-
+        
+        image.src=`${product.Photo}`;  
         cardHeader.textContent = product.Name;
         description.append(`Puedes disfrutar de: ${product.Description}`);
         cost.append(`Costo Promedio: ${product.Price}`);
         myList.appendChild(description);
         myList.appendChild(cost);
+        card.appendChild(image);
         card.appendChild(cardHeader);
         card.appendChild(myList);
         column.appendChild(card);

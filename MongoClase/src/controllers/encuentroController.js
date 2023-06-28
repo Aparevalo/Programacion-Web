@@ -33,12 +33,12 @@ const obtenerEncuentros = async (req, res) => {
 
 const actualizarEncuentro = async (req, res) => {
   const { id } = req.params;
-  const { nombres,apellidos,edad,genero,estadoCivil,descripcion,telefono } = req.body;
+  const { personaA, personaB, lugar, latitud, longitud } = req.body;
 
   try {
     const encuentroActualizado = await encuentro.findByIdAndUpdate(
       id,
-      { nombres,apellidos,edad,genero,estadoCivil,descripcion,telefono },
+      { personaA, personaB, lugar, latitud, longitud },
       { new: true }
     );
     res.json(encuentroActualizado);
