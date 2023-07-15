@@ -1,0 +1,36 @@
+[
+    {
+      "input": {
+        "aula": 1,
+        "horaInicio": 10,
+        "horaFin": 13
+      },
+      "output": {
+        "ocupada": 1,
+        "profesor": 1
+      }
+    },
+    {
+      "input": {
+        "aula": 2,
+        "horaInicio": 14,
+        "horaFin": 17
+      },
+      "output": {
+        "ocupada": 1,
+        "profesor": 2
+      }
+    },
+    {
+      "input": {
+        "aula": 3,
+        "horaInicio": 8,
+        "horaFin": 12
+      },
+      "output": {
+        "ocupada": 1,
+        "profesor": 3
+      }
+    }
+  ]
+  

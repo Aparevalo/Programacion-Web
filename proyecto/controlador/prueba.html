@@ -1,0 +1,170 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+      height: 100%;
+  
+  }
+  
+  body {
+    font-family: 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, Helvetica,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+      background-color: silver;
+      height: 100%;
+      margin: 0;
+  }
+  
+  span {
+      padding-right: 15px;
+      padding-left: 15px;
+  }
+  
+  .container {
+      display: flex;
+    justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .chat {
+      height: 300px;
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+    justify-content: center;
+      align-items: center;
+  } 
+  
+  ::-webkit-input-placeholder { 
+      color: .711 
+  }
+   
+.inputcont{
+    border: 2; 
+    padding: 15px; 
+    margin-left: auto;
+    border-radius: 10px; 
+}
+
+
+
+  
+  .messages {
+      display: flex;
+      flex-direction: column;
+      overflow: scroll;
+      height: 90%;
+      width: 100%;
+      background-color: white;
+      padding: 15px;
+      margin: 15px;
+      border-radius: 10px;
+  }
+  
+  #bot {
+      margin-right: auto;
+  }
+  
+  #user {
+      margin-left: auto;
+  }
+  
+  
+  .bot {
+      font-family: Consolas, 'Courier New', Menlo, source-code-pro, Monaco,  
+      monospace;
+  }
+  
+  .avatar {
+      height: 25px;
+  }
+  
+  .response {
+      display: flex;
+      align-items: center;
+      margin: 1%;
+  }
+  
+  
+  /* Mobile */
+  
+  @media only screen and (max-width: 980px) {
+    .container {
+          flex-direction: column; 
+          justify-content: flex-start;
+      }
+      .chat {
+          width: 75vw;
+          margin: 10vw;
+      }
+  }
+</style>
+<div id="container" class="container">
+  <img src="https://cdn.pixabay.com/photo/2020/01/02/16/38/chatbot-4736275_960_720.png" height="400vh" alt="Chatbot clipart">
+  <div id="chat" class="chat">
+    <div id="messages" class="messages"></div>
+    <div class="inputcont">
+      <input id="data" type="text" placeholder="Write something..." autocomplete="off" autofocus="true" />
+      <button id="send-btn">Enviar</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/compromise@11.14.1/compromise.min.js"></script>
+<script>
+  // Cargar el modelo de compromise
+  nlp.extend(window.compromiseNlpPlugin);
+
+  $(document).ready(function() {
+    $("#send-btn").on("click", function() {
+      var value = $("#data").val();
+      var msg = '<div id="user" class="user response"><span>' + value + '</span></div>';
+      $(".messages").append(msg);
+      $("#data").val('');
+
+      // Extraer las palabras clave utilizando compromise
+      var keywords = extractKeywords(value);
+
+      // Construir la respuesta con las palabras clave extraídas
+      var reply = 'Disponibilidad: ' + keywords.availability + '<br>' +
+        'Aula: ' + keywords.classroom + '<br>' +
+        'Hora: ' + keywords.time;
+
+      // Agregar la respuesta al chat
+      var replay = '<div id="bot" class="bot response"><span>' + reply + '</span></div>';
+      $(".messages").append(replay);
+      $(".messages").scrollTop($(".messages")[0].scrollHeight);
+    });
+  });
+
+  // Función para extraer palabras clave de una frase de entrada
+  function extractKeywords(inputText) {
+    const doc = nlp(inputText);
+
+    // Obtener las palabras clave utilizando la función de compromise
+    const availability = doc.match('disponibilidad').out('text');
+    const classroom = doc.match('aula').numbers().out('text');
+
+    let time = '';
+
+    // Buscar la hora en el formato "10 de la mañana"
+    doc.match('#Time+').match('de').not('Date').out('text').trim().split(' ').forEach(word => {
+      if (!isNaN(word) && word !== 'de') {
+        time += word;
+      }
+    });
+
+    return {
+      availability,
+      classroom,
+      time
+    };
+  }
+</script>
